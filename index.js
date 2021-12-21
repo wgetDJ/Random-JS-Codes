@@ -55,9 +55,13 @@
 async function asyncAwait () {
     let responce = await fetch("https://api2.binance.com/api/v3/ticker/24hr")
     let json = await responce.json()
-    console.log(json)
+    // console.log(json)
+    // this kind of functions return an object
+    return {
+        json: json
+    }
 }
 
 asyncAwait()
-.then(json => console.log(json))
+.then(json => console.log(json.json[0]))
 .catch(err => console.error(err))
