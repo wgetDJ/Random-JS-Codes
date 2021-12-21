@@ -40,10 +40,22 @@
 
 // V3
 
-const promiseTest = () => {
-    fetch("https://api2.binance.com/api/v3/ticker/24hr")
-    .then(responce => responce.json())
-    .then(json => console.log(json[1]))
-    .catch(error => console.log(error))
+// const promiseTest = () => {
+//     fetch("https://api2.binance.com/api/v3/ticker/24hr")
+//     .then(responce => responce.json())
+//     .then(json => console.log(json[1]))
+//     .catch(error => console.log(error))
+// }
+// promiseTest()
+
+
+
+// async/await
+
+async function asyncAwait () {
+    let responce = await fetch("https://api2.binance.com/api/v3/ticker/24hr")
+    let json = await responce.json()
+    console.log(json)
 }
-promiseTest()
+
+asyncAwait()
